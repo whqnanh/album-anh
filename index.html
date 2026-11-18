@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Album hình ảnh sống mãi với thời gian</title>
+
+  <link rel="icon" type="image/jpeg" href="images/avatar.jpg">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#home">Memories Album</a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#album">Bộ sưu tập</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#quote">Ý nghĩa</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="btn btn-primary rounded-pill px-3 py-2 btn-sm fw-semibold shadow-sm" href="#album">
+                <i class="fa-solid fa-images me-1"></i> Khám phá ảnh
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="hero-section text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+          
+          <div class="avatar-wrapper">
+            <img src="images/avatar.jpg" alt="Ảnh đại diện" class="avatar-img img-fluid">
+            <span class="avatar-badge">
+              <i class="fa-solid fa-check"></i>
+            </span>
+          </div>
+
+          <h1 class="hero-title">Album hình ảnh sống mãi với thời gian</h1>
+          <p class="hero-subtitle">
+            Nơi lưu giữ từng khoảnh khắc thanh xuân, những chặng đường tươi đẹp và những kỷ niệm vô giá không bao giờ phai nhạt theo năm tháng.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">6+</div>
+              <div class="stat-label">Bức ảnh</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">4K</div>
+              <div class="stat-label">Chất lượng</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Kỷ niệm</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="album" class="py-5">
+    <div class="container">
+      
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fa-solid fa-border-all me-1"></i> Tất cả
+        </button>
+        <button class="filter-btn" data-filter="portrait">
+          <i class="fa-solid fa-user me-1"></i> Chân dung & Kỷ niệm
+        </button>
+        <button class="filter-btn" data-filter="nature">
+          <i class="fa-solid fa-mountain-sun me-1"></i> Thiên nhiên
+        </button>
+        <button class="filter-btn" data-filter="travel">
+          <i class="fa-solid fa-plane-departure me-1"></i> Du lịch
+        </button>
+        <button class="filter-btn" data-filter="party">
+          <i class="fa-solid fa-music me-1"></i> Sự kiện
+        </button>
+      </div>
+
+      <div class="row g-4" id="albumGrid">
+
+        <div class="col-12 col-sm-6 col-md-4 album-item" data-category="portrait">
+          <div class="card h-100 album-card">
+            <div class="card-img-wrapper">
+              <img src="images/photo1.jpg"
+                   class="card-img-top img-fluid"
+                   alt="Khoảnh khắc lắng đọng"
+                   data-toggle="modal"
+                   data-target="#imageModal"
+                   data-bs-toggle="modal"
+                   data-bs-target="#imageModal"
+                   data-src="images/photo1.jpg">
+              <div class="card-img-overlay-custom">
+                <div class="overlay-top">
+                  <button type="button" class="overlay-btn open-lightbox" data-src="images/photo1.jpg" title="Xem chi tiết">
+                    <i class="fa-solid fa-expand"></i>
+                  </button>
+                </div>
+                <div class="overlay-bottom">
+                  <span class="overlay-date"><i class="fa-regular fa-calendar-days"></i> Kỷ niệm thanh xuân</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-category-badge badge-portrait">Chân dung & Kỷ niệm</span>
+              <h5 class="card-title">Khoảnh khắc lắng đọng</h5>
+              <p class="card-text">Góc nhỏ thân thuộc, hòa mình vào giai điệu âm nhạc và những suy tư nhẹ nhàng của tuổi trẻ.</p>
+              <div class="card-footer-custom">
+                <button type="button" class="like-button" onclick="toggleLike(this)">
+                  <i class="fa-regular fa-heart"></i> <span class="like-count">128</span>
+                </button>
+                <a href="javascript:void(0)" class="view-detail-link open-lightbox" data-src="images/photo1.jpg">
+                  Xem ảnh <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 album-item" data-category="nature">
+          <div class="card h-100 album-card">
+            <div class="card-img-wrapper">
+              <img src="images/photo2.jpg"
+                   class="card-img-top img-fluid"
+                   alt="Bình minh trên đỉnh núi"
+                   data-toggle="modal"
+                   data-target="#imageModal"
+                   data-bs-toggle="modal"
+                   data-bs-target="#imageModal"
+                   data-src="images/photo2.jpg">
+              <div class="card-img-overlay-custom">
+                <div class="overlay-top">
+                  <button type="button" class="overlay-btn open-lightbox" data-src="images/photo2.jpg" title="Xem chi tiết">
+                    <i class="fa-solid fa-expand"></i>
+                  </button>
+                </div>
+                <div class="overlay-bottom">
+                  <span class="overlay-date"><i class="fa-regular fa-calendar-days"></i> Mùa thu 2024</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-category-badge badge-nature">Thiên nhiên</span>
+              <h5 class="card-title">Bình minh trên đỉnh núi</h5>
+              <p class="card-text">Ánh nắng ban mai rực rỡ len qua sương mù vùng cao, đánh thức vạn vật chào đón ngày mới ngập tràn năng lượng.</p>
+              <div class="card-footer-custom">
+                <button type="button" class="like-button" onclick="toggleLike(this)">
+                  <i class="fa-regular fa-heart"></i> <span class="like-count">96</span>
+                </button>
+                <a href="javascript:void(0)" class="view-detail-link open-lightbox" data-src="images/photo2.jpg">
+                  Xem ảnh <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 album-item" data-category="nature">
+          <div class="card h-100 album-card">
+            <div class="card-img-wrapper">
+              <img src="images/photo3.jpg"
+                   class="card-img-top img-fluid"
+                   alt="Hoàng hôn lộng gió"
+                   data-toggle="modal"
+                   data-target="#imageModal"
+                   data-bs-toggle="modal"
+                   data-bs-target="#imageModal"
+                   data-src="images/photo3.jpg">
+              <div class="card-img-overlay-custom">
+                <div class="overlay-top">
+                  <button type="button" class="overlay-btn open-lightbox" data-src="images/photo3.jpg" title="Xem chi tiết">
+                    <i class="fa-solid fa-expand"></i>
+                  </button>
+                </div>
+                <div class="overlay-bottom">
+                  <span class="overlay-date"><i class="fa-regular fa-calendar-days"></i> Chuyến đi tháng 10</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-category-badge badge-sunset">Hoàng hôn</span>
+              <h5 class="card-title">Hoàng hôn lộng gió</h5>
+              <p class="card-text">Bầu trời chuyển sắc vàng cam rực rỡ khi chiều buông, mang lại cảm giác bình yên và thư thái nơi tâm hồn.</p>
+              <div class="card-footer-custom">
+                <button type="button" class="like-button" onclick="toggleLike(this)">
+                  <i class="fa-regular fa-heart"></i> <span class="like-count">142</span>
+                </button>
+                <a href="javascript:void(0)" class="view-detail-link open-lightbox" data-src="images/photo3.jpg">
+                  Xem ảnh <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 album-item" data-category="portrait">
+          <div class="card h-100 album-card">
+            <div class="card-img-wrapper">
+              <img src="images/photo4.jpg"
+                   class="card-img-top img-fluid"
+                   alt="Nụ cười rạng rỡ"
+                   data-toggle="modal"
+                   data-target="#imageModal"
+                   data-bs-toggle="modal"
+                   data-bs-target="#imageModal"
+                   data-src="images/photo4.jpg">
+              <div class="card-img-overlay-custom">
+                <div class="overlay-top">
+                  <button type="button" class="overlay-btn open-lightbox" data-src="images/photo4.jpg" title="Xem chi tiết">
+                    <i class="fa-solid fa-expand"></i>
+                  </button>
+                </div>
+                <div class="overlay-bottom">
+                  <span class="overlay-date"><i class="fa-regular fa-calendar-days"></i> Kỷ niệm học đường</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-category-badge badge-portrait">Chân dung</span>
+              <h5 class="card-title">Nụ cười rạng rỡ</h5>
+              <p class="card-text">Nét đẹp trong trẻo, nụ cười tỏa nắng lưu giữ vẻ hồn nhiên và năng lượng tích cực của những ngày rực rỡ.</p>
+              <div class="card-footer-custom">
+                <button type="button" class="like-button" onclick="toggleLike(this)">
+                  <i class="fa-regular fa-heart"></i> <span class="like-count">215</span>
+                </button>
+                <a href="javascript:void(0)" class="view-detail-link open-lightbox" data-src="images/photo4.jpg">
+                  Xem ảnh <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 album-item" data-category="travel">
+          <div class="card h-100 album-card">
+            <div class="card-img-wrapper">
+              <img src="images/photo5.jpg"
+                   class="card-img-top img-fluid"
+                   alt="Biển xanh và cát trắng"
+                   data-toggle="modal"
+                   data-target="#imageModal"
+                   data-bs-toggle="modal"
+                   data-bs-target="#imageModal"
+                   data-src="images/photo5.jpg">
+              <div class="card-img-overlay-custom">
+                <div class="overlay-top">
+                  <button type="button" class="overlay-btn open-lightbox" data-src="images/photo5.jpg" title="Xem chi tiết">
+                    <i class="fa-solid fa-expand"></i>
+                  </button>
+                </div>
+                <div class="overlay-bottom">
+                  <span class="overlay-date"><i class="fa-regular fa-calendar-days"></i> Mùa hè rực nắng</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-category-badge badge-travel">Du lịch</span>
+              <h5 class="card-title">Biển xanh và cát trắng</h5>
+              <p class="card-text">Làn nước biển ngọc bích, bờ cát dài êm dịu cùng hàng dừa xanh mát tạo nên kỳ nghỉ hè đáng nhớ nhất.</p>
+              <div class="card-footer-custom">
+                <button type="button" class="like-button" onclick="toggleLike(this)">
+                  <i class="fa-regular fa-heart"></i> <span class="like-count">180</span>
+                </button>
+                <a href="javascript:void(0)" class="view-detail-link open-lightbox" data-src="images/photo5.jpg">
+                  Xem ảnh <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 album-item" data-category="party">
+          <div class="card h-100 album-card">
+            <div class="card-img-wrapper">
+              <img src="images/photo6.jpg"
+                   class="card-img-top img-fluid"
+                   alt="Đêm nhạc & Ánh sáng"
+                   data-toggle="modal"
+                   data-target="#imageModal"
+                   data-bs-toggle="modal"
+                   data-bs-target="#imageModal"
+                   data-src="images/photo6.jpg">
+              <div class="card-img-overlay-custom">
+                <div class="overlay-top">
+                  <button type="button" class="overlay-btn open-lightbox" data-src="images/photo6.jpg" title="Xem chi tiết">
+                    <i class="fa-solid fa-expand"></i>
+                  </button>
+                </div>
+                <div class="overlay-bottom">
+                  <span class="overlay-date"><i class="fa-regular fa-calendar-days"></i> Đại nhạc hội</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-category-badge badge-party">Sự kiện</span>
+              <h5 class="card-title">Đêm nhạc & Ánh sáng</h5>
+              <p class="card-text">Hòa mình vào không gian âm nhạc sống động, nơi những ngọn đèn laser thắp sáng niềm đam mê bất tận.</p>
+              <div class="card-footer-custom">
+                <button type="button" class="like-button" onclick="toggleLike(this)">
+                  <i class="fa-regular fa-heart"></i> <span class="like-count">174</span>
+                </button>
+                <a href="javascript:void(0)" class="view-detail-link open-lightbox" data-src="images/photo6.jpg">
+                  Xem ảnh <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="quote" class="quote-banner text-center">
+        <blockquote class="mb-3">
+          "Chúng ta chụp ảnh không phải chỉ để ghi lại hình dáng của sự vật, mà là để lưu giữ cảm xúc của thời khắc ấy khi nó trôi qua."
+        </blockquote>
+        <p class="mb-0 text-white-50 fw-medium">— Trích triết lý nhiếp ảnh & Kỷ niệm thời gian —</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <h5 class="footer-title">
+            Album Hình Ảnh Sống Mãi Với Thời Gian
+          </h5>
+          <p class="small text-secondary mb-0">Website Album hình ảnh kỷ niệm xây dựng trên nền tảng Bootstrap.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <div class="social-icons mb-2">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+          <div class="small text-secondary">
+            &copy; 2026 Album Kỷ Niệm.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="imageModalLabel">Xem ảnh</h5>
+          <button type="button" class="close btn-close" data-dismiss="modal" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modalImage" src="" class="img-fluid" alt="Ảnh lớn"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary px-4 rounded-pill" data-dismiss="modal" data-bs-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.querySelectorAll('img[data-toggle="modal"]').forEach(img => {
+      img.addEventListener('click', function() {
+        const src = this.getAttribute('data-src');
+        document.getElementById('modalImage').setAttribute('src', src);
+
+        if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+          const modalEl = document.getElementById('imageModal');
+          const modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl);
+          modalInstance.show();
+        }
+      });
+    });
+
+    document.querySelectorAll('.open-lightbox').forEach(trigger => {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        const card = this.closest('.album-card');
+        const img = card ? card.querySelector('img[data-toggle="modal"]') : null;
+        if (img) {
+          img.click();
+        } else {
+          const src = this.getAttribute('data-src');
+          if (src) {
+            document.getElementById('modalImage').setAttribute('src', src);
+            if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+              const modalEl = document.getElementById('imageModal');
+              bootstrap.Modal.getOrCreateInstance(modalEl).show();
+            }
+          }
+        }
+      });
+    });
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const albumItems = document.querySelectorAll('.album-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const filterValue = this.getAttribute('data-filter');
+
+        albumItems.forEach(item => {
+          const category = item.getAttribute('data-category');
+          if (filterValue === 'all' || category === filterValue) {
+            item.style.display = 'block';
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1)';
+            }, 50);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              item.style.display = 'none';
+            }, 250);
+          }
+        });
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      const icon = btn.querySelector('i');
+      const countEl = btn.querySelector('.like-count');
+      let count = parseInt(countEl.textContent, 10);
+
+      if (btn.classList.contains('liked')) {
+        icon.classList.remove('fa-regular');
+        icon.classList.add('fa-solid');
+        countEl.textContent = count + 1;
+      } else {
+        icon.classList.remove('fa-solid');
+        icon.classList.add('fa-regular');
+        countEl.textContent = count - 1;
+      }
+    }
+  </script>
+</body>
+</html>
